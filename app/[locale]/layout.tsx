@@ -8,13 +8,12 @@ export const metadata = {
 
 
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children, params: { locale } }: {
+  children: React.ReactNode
+  params: { locale: string }
+}) {
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body className='bg-slate-50'>{children}</body>
     </html>
   );
